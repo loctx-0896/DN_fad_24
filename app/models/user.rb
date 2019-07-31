@@ -58,4 +58,8 @@ class User < ActiveRecord::Base
   def forget
     update_attribute :remember_digest, nil
   end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
 end

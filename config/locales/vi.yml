@@ -60,6 +60,9 @@ vi:
         find_fail: "Người dùng không tồn tại"
         destroy_success: "Xóa thành công"
         destroy_fail: "Xóa thất bại"
+    account:
+      success: "Tài khoản được kích hoạt"
+      invalid_link: "Link bị lỗi"
     orders:
       product_cart_empty: "Giỏ hàng trống"
       order_success: "Đặt hàng thành công"
@@ -72,11 +75,14 @@ vi:
     sessions:
       login_success: "Đăng nhập thành công"
       login_fail: "Tài khoản hoặc mật khẩu không đúng"
+      account_notactive: "Tài khoản chưa kích hoạt"
     users:
       login_please: "Vui lòng đăng nhập!"
       update_success: "Cập nhật thông tin cá nhân thành công"
       update_fail: "Cập nhật thông tin cá nhân thất bại"
       can_not: "Không thể sửa thông tin của người khác. Đây là thông tin của bạn."
+      create_success: "Tạo tài khoản thành công. Kiểm tra email để kích hoạt"
+      create_fail: "Tạo tài khoản thất bại"
     contacts:
       add_success: "Gửi phản hồi thành công"
       add_fail: "Gửi phản hồi thất bại. Gửi lại"
@@ -309,6 +315,11 @@ vi:
       products: "Sản phẩm"
       filter: "Lọc"
       search: "Tìm kiếm"
+  user_mailer:
+    account_activation:
+      hi: "Chào bạn, "
+      introduction: "Chào mừng bạn đến với Food Now!"
+      active: "Nhấn để kích hoạt"
   users:
     show:
       title: "Thông tin cá nhân"
@@ -324,6 +335,15 @@ vi:
       phone: "Số điện thoại"
       password: "Mật khẩu"
       save: "Lưu"
+    new:
+      sign_up: "Đăng kí"
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      submit: "Đăng kí"
+      haven_user: "Đã có tài khoản"
+      signupnow: "Đăng nhập ngay"
   number:
     currency:
       format:

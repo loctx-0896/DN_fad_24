@@ -13,15 +13,14 @@
           <%= f.password_field :password, class: "stext-111 cl2 plh3 size-116 p-l-62 p-r-30", placeholder: t(".password")%>
         </div>
         <%= f.label :remember_me, class: "checkbox inline" do %>
-        <span>
-          <%= f.check_box :remember_me %>
-          <a><%= t(".remember_me") %></a>
-        </span>
+          <span>
+            <%= f.check_box :remember_me %>
+            <a><%= t(".remember_me") %></a>
+          </span>
+        <% end %>
+        <%= f.submit t(".login"), class: "flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" %>
       <% end %>
-
-      <%= f.submit t(".login"), class: "flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" %>
-    <% end %>
-    <p><%= t(".notuser") %> <%= link_to t(".signupnow"), login_path %></p>
+    <p><%= t(".notuser") %> <%= link_to t(".signupnow"), new_user_path %></p>
     </div>
   </div>
 </section>

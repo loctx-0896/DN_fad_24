@@ -5,6 +5,22 @@ class UsersController < ApplicationController
 
   def show; end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new user_signup_params
+    if @user.save
+      @user.send_activation_email
+      flash[:success] = t "controllers.users.create_success"
+      redirect_to login_path
+    else
+      flash[:danger] = t "controllers.users.create_fail"
+      render :new
+    end
+  end
+
   def edit; end
 
   def update
@@ -34,5 +50,10 @@ class UsersController < ApplicationController
     return edit if @user == current_user || current_user.admin?
     flash[:danger] = t "controllers.users.can_not"
     redirect_to edit_user_path(current_user.id)
+  end
+
+  def user_signup_params
+    params.require(:user).permit(:name, :email, :password,
+      :password_confirmation)
   end
 end
