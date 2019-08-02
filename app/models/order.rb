@@ -10,4 +10,8 @@ class Order < ApplicationRecord
   def send_order_to_email
     OrderMailer.send_order_email(self).deliver_now
   end
+
+  def send_email_order_finish
+    OrderMailer.send_email_order_finish(self).deliver_now
+  end
 end

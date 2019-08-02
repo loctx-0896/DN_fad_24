@@ -280,6 +280,11 @@ vi:
       total_price: "Tổng tiền"
       total_cart: "Tổng đơn hàng: "
       subject: "Food Now!"
+    send_email_order_finish:
+      congrate: "Chúc mừng bạn đã nhận hàng thành công với mã đơn hàng "
+      updated_at: "Xác nhận vào lúc "
+      thanks: "Cám ơn bạn đã tin dùng "
+      food_now: "Food Now!"
   orders:
     new:
       title: "Thông tin hóa đơn"
