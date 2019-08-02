@@ -270,6 +270,16 @@ en:
       quick_view: "Quick View"
     purchase:
       add_to_cart: "Add to Cart"
+  order_mailer:
+    send_order_email:
+      created_at: "You have an order at a time "
+      id: "Order id is "
+      name: "Name product"
+      quantity: "Quantity"
+      price: "Price"
+      total_price: "Total price"
+      total_cart: "Total cart: "
+      subject: "Food Now!"
   orders:
     new:
       title: "Infomation Order"

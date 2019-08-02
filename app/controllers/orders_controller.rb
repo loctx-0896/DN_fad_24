@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
     Order.transaction do
       @order.save!
       detail_order_params @products
+      @order.send_order_to_email
       flash[:success] = t "controllers.orders.order_success"
       redirect_to root_path
     end
