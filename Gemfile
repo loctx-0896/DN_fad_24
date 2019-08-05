@@ -12,7 +12,6 @@ gem "bootstrap-will_paginate"
 gem "carrierwave", "1.2.2"
 gem "coffee-rails", "~> 4.2"
 gem "config"
-gem "faker"
 gem "i18n-js"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
@@ -20,7 +19,6 @@ gem "mini_magick", "4.7.0"
 gem "mysql2", ">= 0.4.4", "< 0.6.0"
 gem "puma", "~> 3.11"
 gem "rails"
-gem "rails-controller-testing"
 gem "rails-i18n"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
@@ -30,6 +28,8 @@ gem "will_paginate"
 
 group :development, :test do
   gem "byebug", platforms: %i(mri mingw x64_mingw)
+  gem "factory_bot_rails"
+  gem "rspec-rails", "~> 3.0"
 end
 
 group :development do
@@ -42,7 +42,12 @@ end
 group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
+  gem "faker"
+  gem "guard-rspec"
+  gem "launchy"
+  gem "rails-controller-testing"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "~> 3.1"
 end
 
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
