@@ -60,6 +60,9 @@ en:
         find_fail: "This is user not exist"
         destroy_success: "Destroy successful"
         destroy_fail: "Destroy fail"
+    account:
+      success: "Account activated"
+      invalid_link: "Error link"
     orders:
       product_cart_empty: "Cart empty"
       order_success: "Order successful"
@@ -72,11 +75,14 @@ en:
     sessions:
       login_success: "Successful login"
       login_fail: "Fail login"
+      account_notactive: "Account not active"
     users:
       login_please: "Login, please!"
       update_success: "Update successful"
       update_fail: "Update fail"
       can_not: "Can't edit profile more. This is your profile."
+      create_success: "Create account successful"
+      create_fail: "Create account fail"
     contacts:
       add_success: "Send feaback successful"
       add_fail: "Send feaback fail"
@@ -309,6 +315,11 @@ en:
       products: "Products"
       filter: "Filter"
       search: "Search"
+  user_mailer:
+    account_activation:
+      hi: "Hello, "
+      introduction: "Welcome to Food Now!"
+      active: "Press to active"
   users:
     show:
       title: "Profile"
@@ -324,6 +335,15 @@ en:
       phone: "Phone number"
       password: "Password"
       save: "Save"
+    new:
+      sign_up: "Sign up"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      submit: "Sign up"
+      haven_user: "Already have an account"
+      signupnow: "Login now"
   number:
     currency:
       format:

@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   has_many :detail_orders, dependent: :destroy
   belongs_to :user
   scope :sort_orders, ->{order(created_at: :desc)}
+  validates :name, presence: true
   validates :phone, presence: true
   validates :address, presence: true
-  validates :name, presence: true
 end

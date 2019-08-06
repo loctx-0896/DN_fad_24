@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     resources :users
     resources :orders_histories, only: [:index, :show]
     resources :contacts, only: [:new, :create]
+    resources :account_activations, only: :edit
   end
 end
