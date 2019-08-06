@@ -280,6 +280,11 @@ en:
       total_price: "Total price"
       total_cart: "Total cart: "
       subject: "Food Now!"
+    send_email_order_finish:
+      congrate: "Congratulations on receiving your order successfully with your order code "
+      updated_at: "Confirm at "
+      thanks: "Thank you for using "
+      food_now: "Food Now!"
   orders:
     new:
       title: "Infomation Order"

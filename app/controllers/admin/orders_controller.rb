@@ -52,6 +52,7 @@ class Admin::OrdersController < ApplicationController
       @order.order_success!
     elsif key == statuses(:delivered)
       @order.delivered!
+      @order.send_email_order_finish if @order.delivered?
     end
   rescue ArgumentError
     redirect_error
