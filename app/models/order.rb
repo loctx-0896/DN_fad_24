@@ -6,4 +6,8 @@ class Order < ApplicationRecord
   validates :name, presence: true
   validates :phone, presence: true
   validates :address, presence: true
+
+  def send_order_to_email
+    OrderMailer.send_order_email(self).deliver_now
+  end
 end

@@ -1,0 +1,22 @@
+<p><%= t(".created_at") %><%= l(@order.created_at, format: :long) %></p>
+<p><%= t(".id") %>#<%= @order.id %></p>
+<table class="table">
+  <thead class=" text-primary">
+    <th>
+      <%= t(".name") %>
+    </th>
+    <th>
+      <%= t(".quantity") %>
+    </th>
+    <th>
+      <%= t(".price") %>
+    </th>
+    <th>
+      <%= t(".total_price") %>
+    </th>
+  </thead>
+  <tbody>
+    <%= render partial: "order_information", collection: @order.detail_orders %>
+  </tbody>
+  <p><%= t(".total_cart") %><%= number_to_currency total_cart @order %></p>
+</table>

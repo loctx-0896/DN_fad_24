@@ -270,6 +270,16 @@ vi:
       quick_view: "Xem nhanh"
     purchase:
       add_to_cart: "Thêm vào giỏ hàng"
+  order_mailer:
+    send_order_email:
+      created_at: "Bạn có đơn hàng lúc "
+      id: "Mã đơn hàng là "
+      name: "Tên sản phẩm"
+      quantity: "Số lượng"
+      price: "Giá bán"
+      total_price: "Tổng tiền"
+      total_cart: "Tổng đơn hàng: "
+      subject: "Food Now!"
   orders:
     new:
       title: "Thông tin hóa đơn"

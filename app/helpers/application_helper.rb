@@ -7,4 +7,14 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def total_price quantity, price
+    @total_price = quantity * price
+  end
+
+  def total_cart products
+    products.detail_orders.reduce(0) do |s, p|
+      s + (p.current_price * p.quantity)
+    end
+  end
 end
