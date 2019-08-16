@@ -5,7 +5,6 @@ FactoryBot.define do
     description {Faker::Food.description}
     detail {Faker::Food.description}
     price { Faker::Number.between(10000, 50000) }
-    status { 1 }
-    category_id { 1 }
+    status {"active"}
   end
 end
