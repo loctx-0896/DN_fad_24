@@ -165,6 +165,7 @@ vi:
         confirm: "Bạn có chắc chắn muốn xóa?"
       edit:
         title: "Sửa sản phẩm"
+      form:
         name: "Tên"
         description: "Mô tả"
         picture: "Ảnh"
@@ -183,6 +184,7 @@ vi:
         function: "Chức năng"
       new:
         title: "Thêm sản phẩm"
+      create:
         name: "Tên"
         description: "Mô tả"
         detail: "Chi tiết"

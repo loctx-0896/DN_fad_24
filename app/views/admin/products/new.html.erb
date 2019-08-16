@@ -2,28 +2,8 @@
 <div class="content">
   <h1><%= t(".title") %></h1>
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for [:admin, @products] do |f| %>
-    <%= render "shared/error_messages", object: f.object %>
-
-    <%= f.label :name, t(".name")%>
-    <%= f.text_field :name, class: "form-control" %>
-
-    <%= f.label :description, t(".description")%>
-    <%= f.text_field :name, class: "form-control" %>
-
-    <%= f.label :detail, t(".detail")%>
-    <%= f.text_area :detail, cols: 30, rows: 10, class: "form-control" %>
-
-    <%= f.label :picture, t(".picture")%>
-    <%= f.file_field :picture, accept: Settings.accept_picture %>
-
-    <%= f.label :price, t(".price")%>
-    <%= f.text_field :name, class: "form-control" %>
-
-    <%= f.label :category_name, t(".category_name")%>
-    <%= f.select :category_id, @categories.collect { |p| [ p.name, p.id ] } %>
-
-    <%= f.submit t(".save"), class: "btn btn-primary" %>
+    <%= form_for [:admin, @product] do |form| %>
+      <%= render partial: "form", locals: {f: form} %>
     <% end %>
   </div>
 </div>
