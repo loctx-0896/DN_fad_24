@@ -42,6 +42,7 @@ end
 group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
+  gem "database_cleaner", "~> 1.5"
   gem "faker"
   gem "guard-rspec"
   gem "launchy"
