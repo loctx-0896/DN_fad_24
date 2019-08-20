@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :admin_user
   before_action :load_product, only: %i(edit update destroy)
   before_action :load_categories, only: %i(edit new)

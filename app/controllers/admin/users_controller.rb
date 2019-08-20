@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :admin_user
   before_action :load_user, except: %i(create new index)
 
@@ -47,7 +47,7 @@ class Admin::UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :picture, :email, :phone,
-      :password, :activated, :role)
+      :password, :role)
   end
 
   def load_user
