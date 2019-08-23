@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: :new
   def new
-    logged_in_user
     list_product check_cookie_cart
     return @order = Order.new if @products.any?
     flash[:danger] = t "controllers.orders.product_cart_empty"

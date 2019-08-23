@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_action :logged_in_user, only: %i(create)
+  before_action :authenticate_user!, only: %i(create)
 
   def new
     @contact = Contact.new

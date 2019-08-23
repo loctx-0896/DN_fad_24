@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    devise_for :users
+    resources :users do
+      member do
+        get :confirm_email
+      end
+    end
     namespace :admin do
       resources :categories
       resources :products
