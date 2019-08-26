@@ -3,8 +3,11 @@ class Admin::UsersController < ApplicationController
   authorize_resource
 
   def index
-    @users = User.sort_users.paginate page: params[:page],
+    @q = User.ransack(params[:q])
+    @users = @q.result.sort_users.paginate page: params[:page],
       per_page: Settings.perpage
+    return if @users.present?
+    flash[:danger] = t "controllers.search_fail"
   end
 
   def new

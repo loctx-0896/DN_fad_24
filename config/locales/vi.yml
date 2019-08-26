@@ -32,6 +32,7 @@ vi:
   controllers:
     before_order: "Vui lòng đăng nhập."
     not_right: "Không có quyền!!!"
+    search_fail: "Không có kết quả tìm kiếm cho từ khóa"
     admin:
       categories:
         add_success: "Thêm thành công"
@@ -127,6 +128,7 @@ vi:
         description: "Chi tiết"
         date_feaback: "Ngày phản hồi"
         function: "Chức năng"
+        search: "Nhập tên người phản hồi..."
       contact:
         edit: "Sửa"
       edit:
@@ -144,6 +146,7 @@ vi:
         detail: "Chi tiết đơn hàng"
         function: "Chức năng"
         date_success: "Ngày giao"
+        search: "Nhập vào tên người mua..."
       order:
         detail: "Chi tiết"
         edit: "Sửa"
@@ -186,6 +189,7 @@ vi:
         status: "Trạng thái"
         category: "Danh mục"
         function: "Chức năng"
+        search: "Nhập tên sản phẩm..."
       new:
         title: "Thêm sản phẩm"
       create:
@@ -207,6 +211,7 @@ vi:
         activated: "Trạng thái"
         role: "Quyền"
         function: "Chức năng"
+        search: "Nhập tên người dùng..."
       user:
         edit: "Sửa"
         delete: "Xóa"
@@ -336,6 +341,7 @@ vi:
       products: "Sản phẩm"
       filter: "Lọc"
       search: "Tìm kiếm"
+      name: "Nhập tên sản phẩm..."
   user_mailer:
     account_activation:
       hi: "Chào bạn, "
