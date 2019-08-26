@@ -32,6 +32,7 @@ en:
   controllers:
     before_order: "Login, please!!!"
     not_right: "Not right!!!"
+    search_fail: "Not result for the query"
     admin:
       categories:
         add_success: "Add successful"
@@ -127,6 +128,7 @@ en:
         description: "Description"
         date_feaback: "Date feaback"
         function: "Function"
+        search: "Enter the feedback user..."
       contact:
         edit: "Edit"
       edit:
@@ -144,6 +146,7 @@ en:
         detail: "Detail"
         function: "Function"
         date_success: "Date success"
+        search: "Enter the buyer name..."
       order:
         detail: "Detail"
         edit: "Edit"
@@ -186,6 +189,7 @@ en:
         status: "Status"
         category: "Category"
         function: "Function"
+        search: "Enter the product name..."
       new:
         title: "Add category"
       create:
@@ -207,6 +211,7 @@ en:
         activated: "Status"
         role: "Role"
         function: "Function"
+        search: "Enter the user name..."
       user:
         edit: "Edit"
         delete: "Delete"
@@ -336,6 +341,7 @@ en:
       products: "Products"
       filter: "Filter"
       search: "Search"
+      name: "Enter the product..."
   user_mailer:
     account_activation:
       hi: "Hello, "
