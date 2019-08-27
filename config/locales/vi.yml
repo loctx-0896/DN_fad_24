@@ -33,6 +33,7 @@ vi:
     before_order: "Vui lòng đăng nhập."
     not_right: "Không có quyền!!!"
     search_fail: "Không có kết quả tìm kiếm cho từ khóa"
+    export_fail: "Bạn không có quyền truy cập."
     admin:
       categories:
         add_success: "Thêm thành công"
@@ -212,6 +213,7 @@ vi:
         role: "Quyền"
         function: "Chức năng"
         search: "Nhập tên người dùng..."
+        export: "Xuất ra tất cả người dùng"
       user:
         edit: "Sửa"
         delete: "Xóa"

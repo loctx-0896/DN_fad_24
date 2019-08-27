@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
             uniqueness: {case_sensitive: false}
   validates :phone, presence: true, numericality: true
 
+  CSV_ATTRIBUTES = %w(name email phone).freeze
+
   def downcase_email
     email.downcase!
   end
