@@ -18,11 +18,12 @@ Rails.application.routes.draw do
       resources :users
       resources :orders
       resources :contacts
+      resources :export_users, only: :index
     end
     resources :products
     resources :carts
     resources :orders
-    resources :products_detail, only: [:show]
+    resources :products_detail, only: :show
     resources :users
     resources :orders_histories, only: [:index, :show]
     resources :contacts, only: [:new, :create]

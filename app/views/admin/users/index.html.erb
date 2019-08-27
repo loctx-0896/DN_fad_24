@@ -33,5 +33,6 @@
       </div>
     </div>
   </table>
+  <%= link_to t(".export"), admin_export_users_path(format: :csv) %>
   <%= will_paginate %>
 </div>

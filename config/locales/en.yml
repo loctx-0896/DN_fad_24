@@ -33,6 +33,7 @@ en:
     before_order: "Login, please!!!"
     not_right: "Not right!!!"
     search_fail: "Not result for the query"
+    export_fail: "You do not have access."
     admin:
       categories:
         add_success: "Add successful"
@@ -212,6 +213,7 @@ en:
         role: "Role"
         function: "Function"
         search: "Enter the user name..."
+        export: "Export all user"
       user:
         edit: "Edit"
         delete: "Delete"
