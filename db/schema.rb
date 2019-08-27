@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_08_22_061305) do
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.bigint "parent_id"
     t.datetime "created_at", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_061305) do
     t.index ["parent_id"], name: "fk_rails_82f48f7407"
   end
 
-  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "phone"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_061305) do
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
-  create_table "detail_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "detail_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "quantity", default: 1
     t.float "current_price"
     t.bigint "order_id"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_061305) do
     t.index ["product_id"], name: "index_detail_orders_on_product_id"
   end
 
-  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "status", default: 1
     t.string "name"
     t.string "phone"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_061305) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "picture"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_061305) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
-  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.text "comment_content"
     t.integer "parent_comment_id"
     t.integer "rating", default: 0
@@ -82,12 +82,23 @@ ActiveRecord::Schema.define(version: 2019_08_22_061305) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+    t.datetime "reset_sent_at"
+    t.integer "activated", default: 0
     t.integer "role", default: 0
     t.string "name"
     t.string "email", default: "", null: false
     t.string "phone"
+    t.string "password_digest"
+    t.string "remember_digest"
+    t.string "activation_digest"
+    t.string "reset_digest"
+    t.string "fb_token"
+    t.string "gg_token"
+    t.string "tw_token"
     t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
