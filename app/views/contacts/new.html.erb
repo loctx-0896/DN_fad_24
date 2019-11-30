@@ -1,0 +1,29 @@
+<% provide :title, t(".title") %>
+<div class="content">
+  <h1><%= t(".title") %></h1>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @contact do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label t ".your_name" %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label t ".email" %>
+      <%= f.text_field :email, class: "form-control" %>
+
+      <%= f.label t ".phone" %>
+      <%= f.text_field :phone, class: "form-control" %>
+
+      <%= f.label t ".food_name" %>
+      <%= f.text_field :food_name, class: "form-control" %>
+
+      <%= f.label t ".picture" %>
+      <%= f.file_field :picture, accept: Settings.accept_picture %>
+
+      <%= f.label t ".description" %>
+      <%= f.text_area :description, cols: 30, rows: 10, class: "form-control" %>
+
+      <%= f.submit t(".save"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

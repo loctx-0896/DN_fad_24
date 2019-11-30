@@ -11,3 +11,6 @@ users:
 remember: "1"
 perpage: 5
 accept_picture: "image/jpeg,image/gif,image/png"
+perpage_12: 12
+quantity_product: 1
+ability: "Admin"

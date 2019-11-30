@@ -1,0 +1,6 @@
+<tr>
+  <td><%= order_information.product.name %></td>
+  <td><%= order_information.quantity %></td>
+  <td><%= number_to_currency order_information.current_price %></td>
+  <td><%= number_to_currency total_price(order_information.quantity, order_information.current_price) %></td>
+</tr>

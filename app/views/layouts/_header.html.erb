@@ -1,203 +1,167 @@
 <!-- Header -->
-	<header>
-		<!-- Header desktop -->
-		<div class="container-menu-desktop">
-			<!-- Topbar -->
-			<div class="top-bar">
-				<div class="content-topbar flex-sb-m h-full container">
-						<div class="left-top-bar flex-w h-full">
-						<%= link_to t(".language_en"), locale:"en" %>
-						<p>|</p>
-						<%= link_to t(".language_vi"), locale:"vi" %>
-					</div>
-
-					<div class="right-top-bar flex-w h-full">
-						<% if logged_in? %>
-							<a href="/login" class="flex-c-m trans-04 p-lr-25">
-								<%= t(".my_account") %>
-							</a>
-							<%= link_to t(".logout"), logout_path, method: :delete, class: "flex-c-m trans-04 p-lr-25" %>
-						<% else %>
-							<li><%= link_to t(".login"), login_path, class: "flex-c-m trans-04 p-lr-25" %></li>
-        		<% end %>
-					</div>
-				</div>
-			</div>
-			<div class="wrap-menu-desktop">
-				<nav class="limiter-menu-desktop container">
-
-					<!-- Logo desktop -->
-					<a href="#" class="logo">
-						<img src="assets/logo.png" alt="IMG-LOGO">
-					</a>
-
-					<!-- Menu desktop -->
-					<div class="menu-desktop">
-						<ul class="main-menu">
-							<li class="active-menu">
-								<a href="#">Trang chủ</a>
-							</li>
-
-							<li>
-								<a href="#">Danh mục</a>
-								<ul class="sub-menu">
-									<li><a href="#">Trà sữa</a></li>
-									<li><a href="#">Nước trái cây</a></li>
-									<li><a href="#">XXX</a></li>
-								</ul>
-							</li>
-
-							<li class="label1" data-label1="hot">
-								<a href="#">Khuyến mãi</a>
-							</li>
-
-							<li>
-								<a href="#">Blog</a>
-							</li>
-
-							<li>
-								<a href="#">Chúng tôi</a>
-							</li>
-
-							<li>
-								<a href="#">Liên hệ</a>
-							</li>
-						</ul>
-					</div>
-
-					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="fas fa-search"></i>
-						</div>
-
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-							<i class="fas fa-cart-plus"></i>
-						</div>
-
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-							<i class="fas fa-heart"></i>
-						</a>
-					</div>
-				</nav>
-			</div>
-		</div>
-
-		<!-- Header Mobile -->
-		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->
-			<div class="logo-mobile">
-				<a href="#"><img src="assets/logo.png" alt="IMG-LOGO"></a>
-			</div>
-
-			<!-- Icon header -->
-			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-					<i class="fas fa-search"></i>
-				</div>
-
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
-					<i class="fas fa-cart-plus"></i>
-				</div>
-
-				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-					<i class="fas fa-heart"></i>
-				</a>
-			</div>
-
-			<!-- Button show menu -->
-			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</div>
-		</div>
-
-
-		<!-- Menu Mobile -->
-		<div class="menu-mobile">
-			<ul class="topbar-mobile">
-				<li>
-					<div class="left-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							English
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Tiếng Việt
-						</a>
-					</div>
-				</li>
-
-				<li>
-					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
-						</a>
-					</div>
-				</li>
-			</ul>
-
-			<ul class="main-menu-m">
-				<li>
-					<a href="#">Trang chủ</a>
-				</li>
-
-				<li>
-					<a href="#">Danh mục</a>
-					<ul class="sub-menu-m">
-						<li><a href="#">Trà sữa</a></li>
-						<li><a href="#">Nước trái cây</a></li>
-						<li><a href="#">XXX</a></li>
-					</ul>
-					<span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
-				</li>
-
-				<li>
-					<a href="#" class="label1 rs1" data-label1="hot">Features</a>
-				</li>
-
-				<li>
-					<a href="#">Blog</a>
-				</li>
-
-				<li>
-					<a href="#">Về chúng tôi</a>
-				</li>
-
-				<li>
-					<a href="#">Liên hệ</a>
-				</li>
-			</ul>
-		</div>
-
-		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="assets/icon-close2.png" alt="CLOSE">
-				</button>
-
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="fas fa-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
-	</header>
+<header>
+  <!-- Header desktop -->
+  <div class="container-menu-desktop">
+    <!-- Topbar -->
+    <div class="top-bar">
+      <div class="content-topbar flex-sb-m h-full container">
+        <div class="left-top-bar flex-w h-full">
+          <%= link_to t(".language_en"), locale:"en" %>
+          	  <p>|</p>
+          <%= link_to t(".language_vi"), locale:"vi" %>
+        </div>
+        <div class="right-top-bar flex-w h-full">
+          <% if user_signed_in? %>
+            <%= link_to t(".my_account"), user_path(current_user.id), class: "flex-c-m trans-04 p-lr-25" %>
+            <%= link_to t(".logout"), destroy_user_session_path, method: :delete, class: "flex-c-m trans-04 p-lr-25" %>
+          <% else %>
+            <li><%= link_to t(".login"), new_user_session_path, class: "flex-c-m trans-04 p-lr-25" %></li>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="wrap-menu-desktop">
+      <nav class="limiter-menu-desktop container">
+        <!-- Logo desktop -->
+        <a href="<%= root_path %>" class="logo">
+        <img src="assets/logo.png" alt="IMG-LOGO">
+        </a>
+        <!-- Menu desktop -->
+        <div class="menu-desktop">
+          <ul class="main-menu">
+            <li class="active-menu">
+              <%= link_to t(".home"), root_path %>
+            </li>
+            <li>
+              <%= link_to t(".category") %>
+              <ul class="sub-menu">
+                <li><a href="#">Nước trái cây</a></li>
+                <li><a href="#">XXX</a></li>
+              </ul>
+            </li>
+            <li class="label1" data-label1="hot">
+              <%= link_to t(".discount") %>
+            </li>
+            <li>
+              <%= link_to t(".blog") %>
+            </li>
+            <li>
+              <%= link_to t(".contact"), new_contact_path %>
+            </li>
+            <% if user_signed_in? %>
+              <% if current_user.admin? %>
+                <li>
+                  <%= link_to t(".manager") %>
+                  <ul class="sub-menu">
+                    <li><%= link_to t(".categories"), admin_categories_path %></li>
+                    <li><%= link_to t(".users"), admin_users_path %></li>
+                    <li><%= link_to t(".products"), admin_products_path %></li>
+                    <li><%= link_to t(".orders"), admin_orders_path %></li>
+                    <li><%= link_to t(".contacts"), admin_contacts_path %></li>
+                  </ul>
+                </li>
+              <% else %>
+              <% end %>
+            <% else %>
+            <% end %>
+          </ul>
+        </div>
+        <!-- Icon header -->
+        <div class="wrap-icon-header flex-w flex-r-m">
+          <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" id="quantity_products" data-notify="<%= size_cart %>">
+            <%= link_to carts_path do %>
+              <i class="fas fa-cart-plus"></i>
+            <% end %>
+          </div>
+          <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+          <i class="fas fa-heart"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Header Mobile -->
+  <div class="wrap-header-mobile">
+    <!-- Logo moblie -->
+    <div class="logo-mobile">
+      <a href="#"><img src="assets/logo.png" alt="IMG-LOGO"></a>
+    </div>
+    <!-- Icon header -->
+    <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+      <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+        <i class="fas fa-cart-plus"></i>
+      </div>
+      <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+      <i class="fas fa-heart"></i>
+      </a>
+    </div>
+    <!-- Button show menu -->
+    <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+      <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+      </span>
+    </div>
+  </div>
+  <!-- Menu Mobile -->
+  <div class="menu-mobile">
+    <ul class="topbar-mobile">
+      <li>
+        <div class="left-top-bar flex-w h-full">
+          <a href="#" class="flex-c-m p-lr-10 trans-04">
+          English
+          </a>
+          <a href="#" class="flex-c-m p-lr-10 trans-04">
+          Tiếng Việt
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="right-top-bar flex-w h-full">
+          <a href="#" class="flex-c-m p-lr-10 trans-04">
+          Help & FAQs
+          </a>
+          <a href="#" class="flex-c-m p-lr-10 trans-04">
+          My Account
+          </a>
+          <a href="#" class="flex-c-m p-lr-10 trans-04">
+          EN
+          </a>
+          <a href="#" class="flex-c-m p-lr-10 trans-04">
+          USD
+          </a>
+        </div>
+      </li>
+    </ul>
+    <ul class="main-menu-m">
+      <li>
+        <a href="#">Trang chủ</a>
+      </li>
+      <li>
+        <a href="#">Danh mục</a>
+        <ul class="sub-menu-m">
+          <li><a href="#">Trà sữa</a></li>
+          <li><a href="#">Nước trái cây</a></li>
+          <li><a href="#">XXX</a></li>
+        </ul>
+        <span class="arrow-main-menu-m">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </span>
+      </li>
+      <li>
+        <a href="#" class="label1 rs1" data-label1="hot">Features</a>
+      </li>
+      <li>
+        <a href="#">Blog</a>
+      </li>
+      <li>
+        <a href="#">Về chúng tôi</a>
+      </li>
+      <li>
+        <a href="#">Liên hệ</a>
+      </li>
+    </ul>
+  </div>
+</header>

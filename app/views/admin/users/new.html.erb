@@ -1,0 +1,31 @@
+<% provide :title, t(".title") %>
+<div class="content">
+  <h1><%= t(".title") %></h1>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @user] do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+
+    <%= f.label t ".name" %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.label :picture, t(".picture")%>
+    <%= f.file_field :picture, accept: Settings.accept_picture %>
+
+    <%= f.label t ".email" %>
+    <%= f.text_field :email, class: "form-control" %>
+
+    <%= f.label t ".phone" %>
+    <%= f.text_field :phone, class: "form-control" %>
+
+    <%= f.hidden_field :activated, :value => :active , class: "form-control" %>
+
+    <%= f.label t ".password" %>
+    <%= f.password_field :password, class: "form-control" %>
+
+    <%= f.label t ".role" %>
+    <%= f.select :role, enum_options_for_select(User, :role) %>
+
+    <%= f.submit t(".save"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

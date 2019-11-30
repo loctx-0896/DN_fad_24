@@ -1,5 +1,39 @@
 vi:
+  activerecord:
+    enums:
+      user:
+        roles:
+          guess: "Người dùng"
+          admin: "Quản trị viên"
+        activateds:
+          unactive: "Khóa"
+          active: "Kích hoạt"
+      order:
+        statuses:
+          order_success: "Đặt hàng thành công"
+          delivered: "Đã giao"
+      product:
+        statuses:
+          active: "Kích hoạt"
+          unactive: "Không kích hoạt"
+      contact:
+        statuses:
+          success: "Đã xong"
+          pending: "Chưa xử lí"
+  time:
+    formats:
+      long: "%d %B, %Y %H:%M"
+  alert:
+    add_to_cart:
+      success: "Thêm vào giỏ hàng thành công"
+      fail: "Thêm vào giỏ hàng thất bại"
+    update_cart:
+      fail: "Sửa giỏ hàng thất bại"
   controllers:
+    before_order: "Vui lòng đăng nhập."
+    not_right: "Không có quyền!!!"
+    search_fail: "Không có kết quả tìm kiếm cho từ khóa"
+    export_fail: "Bạn không có quyền truy cập."
     admin:
       categories:
         add_success: "Thêm thành công"
@@ -8,6 +42,12 @@ vi:
         delete_success: "Xóa thành công"
         delete_fail: "Xóa thất bại"
         not_found_category: "Danh mục không tồn tại"
+      contacts:
+        update_success: "Cập nhật thành công"
+        update_fail: "Cập nhật thất bại"
+        not_found_contact: "Không tồn tại phản hồi"
+      import:
+        not_file: "Vui lòng chọn file import!"
       products:
         add_success: "Thêm thành công"
         add_fail: "Thêm thất bại"
@@ -16,9 +56,43 @@ vi:
         delete_fail: "Xóa thất bại"
         not_found_product: "Sản phẩm không tồn tại"
         not_found_category: "Danh mục sản phẩm không tồn tại"
+      users:
+        add_success: "Thêm người dùng thành công"
+        add_fail: "Thêm người dùng thất bại"
+        update_success: "Sửa người dùng thành công"
+        update_fail: "Sửa người dùng thất bại"
+        find_fail: "Người dùng không tồn tại"
+        destroy_success: "Xóa thành công"
+        destroy_fail: "Xóa thất bại"
+    account:
+      success: "Tài khoản được kích hoạt"
+      invalid_link: "Link bị lỗi"
+    application:
+      not_permition: "Bạn không có quyền."
+      login_please: "Vui lòng đăng nhập."
+    orders:
+      product_cart_empty: "Giỏ hàng trống"
+      order_success: "Đặt hàng thành công"
+      order_fail: "Đặt hàng thất bại"
+      phone_empty: "Số điện thoại không được trống"
+    orders_history:
+      not_found: "Đơn hàng không tồn tại"
+      update_order_fail: "Cập nhật thất bại"
+      update_order_successful: "Cập nhật thành công"
     sessions:
       login_success: "Đăng nhập thành công"
       login_fail: "Tài khoản hoặc mật khẩu không đúng"
+      account_notactive: "Tài khoản chưa kích hoạt"
+    users:
+      login_please: "Vui lòng đăng nhập!"
+      update_success: "Cập nhật thông tin cá nhân thành công"
+      update_fail: "Cập nhật thông tin cá nhân thất bại"
+      can_not: "Không thể sửa thông tin của người khác. Đây là thông tin của bạn."
+      create_success: "Tạo tài khoản thành công. Kiểm tra email để kích hoạt"
+      create_fail: "Tạo tài khoản thất bại"
+    contacts:
+      add_success: "Gửi phản hồi thành công"
+      add_fail: "Gửi phản hồi thất bại. Gửi lại"
   helpers:
     base_title: "Mua ngay!"
   admin:
@@ -44,6 +118,59 @@ vi:
         name: "Tên"
         save_changes: "Lưu"
         new_name_category: "Chọn danh mục cha"
+    contacts:
+      index:
+        title: "Liên hệ, phản hồi"
+        name: "Tên"
+        phone: "Số điện thoại"
+        email: "Email"
+        food_name: "Tên món ăn đề xuất"
+        picture: "Hình ảnh minh họa"
+        status: "Trạng thái"
+        user: "Người phản hồi"
+        description: "Chi tiết"
+        date_feaback: "Ngày phản hồi"
+        function: "Chức năng"
+        search: "Nhập tên người phản hồi..."
+      contact:
+        edit: "Sửa"
+      edit:
+        title: "Sửa trạng thái"
+        status: "Trạng thái"
+        save: "Lưu"
+    imports:
+      index:
+        title: "Nhập dữ liệu file csv"
+        import: "Nhập"
+    orders:
+      index:
+        title: "Lịch sử đơn mua"
+        name: "Tên"
+        phone: "Số điện thoại"
+        address: "Địa chỉ nhận hàng"
+        order_date: "Ngày đặt hàng"
+        status: "Trạng thái đơn hàng"
+        detail: "Chi tiết đơn hàng"
+        function: "Chức năng"
+        date_success: "Ngày giao"
+        search: "Nhập vào tên người mua..."
+      order:
+        detail: "Chi tiết"
+        edit: "Sửa"
+      show:
+        title: "Chi tiết đơn hàng"
+        product: "Tên sản phẩm"
+        quantity: "Số lượng"
+        current_price: "Giá lúc mua"
+        total_price: "Tổng tiền"
+        name_person_purchase: "Người đặt hàng: "
+        name_person_receive: "Người nhận hàng: "
+        address_person_receive: "Địa chỉ nhận hàng: "
+        total_cart: "Tổng hóa đơn: "
+      edit:
+        title: "Sửa trạng thái"
+        status: "Trạng thái"
+        save: "Lưu"
     products:
       product:
         edit: "Sửa"
@@ -51,8 +178,10 @@ vi:
         confirm: "Bạn có chắc chắn muốn xóa?"
       edit:
         title: "Sửa sản phẩm"
+      form:
         name: "Tên"
         description: "Mô tả"
+        detail: "Chi tiết"
         picture: "Ảnh"
         price: "Giá"
         category_name: "Tên danh mục"
@@ -67,8 +196,10 @@ vi:
         status: "Trạng thái"
         category: "Danh mục"
         function: "Chức năng"
+        search: "Nhập tên sản phẩm..."
       new:
         title: "Thêm sản phẩm"
+      create:
         name: "Tên"
         description: "Mô tả"
         detail: "Chi tiết"
@@ -76,6 +207,67 @@ vi:
         price: "Giá"
         category_name: "Danh mục"
         save: "Lưu"
+    users:
+      index:
+        title: "Người dùng"
+        add_user: "Thêm nguời dùng "
+        name: "Tên"
+        picture: "Ảnh đại diện"
+        email: "Email"
+        phone: "Số điện thoại"
+        activated: "Trạng thái"
+        role: "Quyền"
+        function: "Chức năng"
+        search: "Nhập tên người dùng..."
+        export: "Xuất ra tất cả người dùng"
+        import: "Nhập người dùng từ file csv"
+      user:
+        edit: "Sửa"
+        delete: "Xóa"
+        confirm: "Bạn có chắc chắn muốn xóa?"
+      new:
+        title: "Tạo người dùng"
+        name: "Tên"
+        email: "Email"
+        phone: "Số điện thoại"
+        password: "Mật khẩu"
+        role: "Quyền hạn"
+        save: "Lưu"
+        picture: "Ảnh đại diện"
+      edit:
+        title: "Cập nhật người dùng"
+        name: "Tên"
+        email: "Email"
+        phone: "Số điện thoại"
+        activated: "Trạng thái"
+        password: "Mật khẩu"
+        role: "Quyền hạn"
+        save: "Lưu"
+        picture: "Ảnh đại diện"
+  carts:
+    index:
+      title: "Giỏ hàng"
+      name: "Sản phẩm"
+      price: "Giá"
+      quantity: "Số lượng"
+      total: "Tổng"
+      apply_code: "Áp mã"
+      update_cart: "Cập nhật giỏ hàng"
+      cart_totals: "Tổng tiền"
+      proceed_to_checkout: "Thanh toán"
+      delete: "Xóa"
+    cart_products:
+      confirm: "Bạn có chắc chắn muốn xóa?"
+  contacts:
+    new:
+      title: "Gửi phản hồi hoặc đề xuất món ăn mới"
+      your_name: "Tên của bạn (*)"
+      email: "Email (*)"
+      phone: "Số điện thoại (*)"
+      food_name: "Món ăn đề xuất"
+      picture: "Hình ảnh (nếu có)"
+      description: "Mô tả hoặc phản hồi(*)"
+      save: "Gửi"
   layouts:
     header:
       language_en: "English"
@@ -83,6 +275,67 @@ vi:
       my_account: "Tài khoản"
       logout: "Đăng xuất"
       login: "Đăng nhập"
+      home: "Trang chủ"
+      category: "Danh mục"
+      discount: "Khuyến mãi"
+      blog: "Blog"
+      contact: "Liên hệ"
+      manager: "Quản trị viên"
+      categories: "Danh mục"
+      products: "Sản phẩm"
+      users: "Người dùng"
+      orders: "Đơn hàng"
+      contacts: "Liên hệ"
+    products:
+      quick_view: "Xem nhanh"
+    purchase:
+      add_to_cart: "Thêm vào giỏ hàng"
+  order_mailer:
+    send_order_email:
+      created_at: "Bạn có đơn hàng lúc "
+      id: "Mã đơn hàng là "
+      name: "Tên sản phẩm"
+      quantity: "Số lượng"
+      price: "Giá bán"
+      total_price: "Tổng tiền"
+      total_cart: "Tổng đơn hàng: "
+      subject: "Food Now!"
+    send_email_order_finish:
+      congrate: "Chúc mừng bạn đã nhận hàng thành công với mã đơn hàng "
+      updated_at: "Xác nhận vào lúc "
+      thanks: "Cám ơn bạn đã tin dùng "
+      food_now: "Food Now!"
+  orders:
+    new:
+      title: "Thông tin hóa đơn"
+      name: "Tên của bạn"
+      phone: "Số điện thoại của bạn"
+      address: "Địa chỉ nhận hàng"
+      submit: "Hoàn thành"
+  orders_histories:
+    index:
+      title: "Lịch sử đơn mua"
+      name: "Tên"
+      phone: "Số điện thoại"
+      address: "Địa chỉ nhận hàng"
+      order_date: "Ngày đặt hàng"
+      status: "Trạng thái đơn hàng"
+      detail: "Chi tiết đơn hàng"
+    order:
+      detail: "Chi tiết"
+    show:
+      title: "Chi tiết đơn hàng"
+      product: "Tên sản phẩm"
+      quantity: "Số lượng"
+      current_price: "Giá lúc mua"
+      total_price: "Tổng tiền"
+  products_detail:
+    show:
+      title: "Chi tiết sản phẩm"
+      add_to_cart: "Thêm vào giỏ hàng"
+      review: "Đánh giá"
+      more_product: "Sản phẩm khác"
+      price: "Giá bán: "
   sessions:
     new:
       login: "Đăng nhập"
@@ -94,3 +347,41 @@ vi:
   static_pages:
     home:
       title: "Trang chủ"
+      products: "Sản phẩm"
+      filter: "Lọc"
+      search: "Tìm kiếm"
+      name: "Nhập tên sản phẩm..."
+  user_mailer:
+    account_activation:
+      hi: "Chào bạn, "
+      introduction: "Chào mừng bạn đến với Food Now!"
+      active: "Nhấn để kích hoạt"
+  users:
+    show:
+      title: "Thông tin cá nhân"
+      name: "Tên: "
+      phone: "Số điện thoại: "
+      email: "Email: "
+      update_profile: "Cập nhật trang cá nhân"
+      orders: "Lịch sử đơn hàng"
+    edit:
+      title: "Cập nhật thông tin cá nhân"
+      name: "Tên"
+      picture: "Ảnh đại diện"
+      phone: "Số điện thoại"
+      password: "Mật khẩu"
+      save: "Lưu"
+    new:
+      sign_up: "Đăng kí"
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      submit: "Đăng kí"
+      haven_user: "Đã có tài khoản"
+      signupnow: "Đăng nhập ngay"
+  number:
+    currency:
+      format:
+        format: "%n%u"
+        unit: "VND"

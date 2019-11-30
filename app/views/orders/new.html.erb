@@ -1,0 +1,20 @@
+<% provide :title, t(".title") %>
+<div class="content">
+  <h1><%= t(".title") %></h1>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @order do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+
+    <%= f.label t ".name" %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.label t ".phone" %>
+    <%= f.text_field :phone, class: "form-control" %>
+
+    <%= f.label t ".address" %>
+    <%= f.text_area :address, cols: 30, rows: 10, class: "form-control" %>
+
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

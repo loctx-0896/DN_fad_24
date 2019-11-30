@@ -1,0 +1,26 @@
+<tr>
+  <td>
+    <%= order.name %>
+  </td>
+  <td>
+    <%= order.phone %>
+  </td>
+  <td>
+    <%= order.address %>
+  </td>
+  <td>
+    <%= l(order.created_at, format: :long) %>
+  </td>
+  <td>
+    <%= l(order.updated_at, format: :long) %>
+  </td>
+  <td>
+    <%= enum_l(order, :status) %>
+  </td>
+  <td>
+    <%= link_to t(".detail"), admin_order_path(order.id) %>
+  </td>
+  <td>
+    <%= link_to t(".edit"), edit_admin_order_path(order), method: :get %>
+  </td>
+</tr>

@@ -1,14 +1,18 @@
 class Admin::ProductsController < ApplicationController
+  authorize_resource
   before_action :load_product, only: %i(edit update destroy)
   before_action :load_categories, only: %i(edit new)
 
   def index
-    @products = Product.sort_products.paginate page: params[:page],
+    @q = Product.ransack(params[:q])
+    @products = @q.result.sort_products.paginate page: params[:page],
       per_page: Settings.perpage
+    return if @products.present?
+    flash[:danger] = t "controllers.search_fail"
   end
 
   def new
-    @products = Product.new
+    @product = Product.new
   end
 
   def create
@@ -39,7 +43,7 @@ class Admin::ProductsController < ApplicationController
     else
       flash[:danger] = t "controllers.admin.products.delete_fail"
     end
-    redirect_to request.referer
+    redirect_to admin_products_path
   end
 
   private

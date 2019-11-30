@@ -1,0 +1,20 @@
+<tr>
+  <td>
+    <%= order.name %>
+  </td>
+  <td>
+    <%= order.phone %>
+  </td>
+  <td>
+    <%= order.address %>
+  </td>
+  <td>
+    <%= l(order.created_at, format: :long) %>
+  </td>
+  <td>
+    <%= enum_l(order, :status) %>
+  </td>
+  <td>
+    <%= link_to t(".detail"), orders_history_path(order.id) %>
+  </td>
+</tr>

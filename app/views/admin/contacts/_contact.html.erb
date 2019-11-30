@@ -1,0 +1,32 @@
+<tr>
+  <td>
+    <%= contact.name %>
+  </td>
+  <td>
+    <%= contact.email %>
+  </td>
+  <td>
+    <%= contact.phone %>
+  </td>
+  <td>
+    <%= contact.food_name %>
+  </td>
+  <td class="resize_image">
+    <%= image_tag contact.picture.url if contact.picture? %>
+  </td>
+  <td>
+    <%= contact.description %>
+  </td>
+  <td>
+    <%= contact.user.name %>
+  </td>
+  <td>
+    <%= contact.created_at.strftime("%F %T") %>
+  </td>
+  <td>
+    <%= enum_l(contact, :status) %>
+  </td>
+  <td>
+    <%= link_to t(".edit"), edit_admin_contact_path(contact), method: :get %>
+  </td>
+</tr>

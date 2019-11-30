@@ -269,13 +269,15 @@ $(document).ready(function () {
 
         /*==================================================================
         [ Show modal1 ]*/
-        $('.js-show-modal1').on('click', function (e) {
+        $('.js-show-modal').on('click', function (e) {
             e.preventDefault();
-            $('.js-modal1').addClass('show-modal1');
+            var productId = $(this).data("productid");
+            $('.js-modal' + productId).addClass('show-modal1');
         });
 
-        $('.js-hide-modal1').on('click', function () {
-            $('.js-modal1').removeClass('show-modal1');
+        $('.js-hide-modal').on('click', function () {
+            var productId = $(this).attr("productid");
+            $('.js-modal' + productId).removeClass('show-modal1');
         });
 
 

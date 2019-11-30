@@ -12,10 +12,10 @@
     <%= product.detail %>
   </td>
   <td>
-    <%= number_to_currency(product.price, unit: "VND") %>
+    <%= number_to_currency product.price %>
   </td>
   <td>
-    <%= product.status %>
+    <%= enum_l(product, :status) %>
   </td>
   <td>
     <%= product.category.name %>

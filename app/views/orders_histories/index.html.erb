@@ -1,0 +1,28 @@
+<% provide :title, t(".title") %>
+<div class="content">
+  <table class="table">
+    <thead class=" text-primary">
+      <th>
+        <%= t ".name" %>
+      </th>
+      <th>
+        <%= t ".phone" %>
+      </th>
+      <th>
+        <%= t ".address" %>
+      </th>
+      <th>
+        <%= t ".order_date" %>
+      </th>
+      <th>
+        <%= t ".status" %>
+      </th>
+      <th>
+        <%= t ".detail" %>
+      </th>
+    </thead>
+    <tbody>
+      <%= render partial: "orders_histories/order", collection: @order_histories %>
+    </tbody>
+  </table>
+</div>

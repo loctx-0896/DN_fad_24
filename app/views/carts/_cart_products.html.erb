@@ -1,0 +1,16 @@
+<tr class="table_row">
+  <td class="column-1">
+    <div class="how-itemcart1">
+      <img src="<%= cart_products.picture %>" alt="IMG">
+    </div>
+  </td>
+  <td class="column-2"><%= cart_products.name %></td>
+  <td class="column-3"><%= number_to_currency cart_products.price %></td>
+  <td class="column-4">
+    <input class="total-quantity-product" data-product-id="<%= cart_products.id %>" type="number" min="1" value="<%= cart_products.total_quantity %>">
+  </td>
+  <td class="column-5" id="total-price-<%= cart_products.id %>"><%= number_to_currency total_price(cart_products.total_quantity, cart_products.price) %></td>
+  <td class="column-6">
+    <%= link_to t(".delete"), cart_path(cart_products), method: :delete, data: {confirm: t(".confirm")} %>
+  </td>
+</tr>
